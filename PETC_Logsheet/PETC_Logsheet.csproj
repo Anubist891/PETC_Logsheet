@@ -51,7 +51,6 @@
     <Compile Include="AddInquiryCertificate.Designer.cs">
       <DependentUpon>AddInquiryCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassTest.cs" />
     <Compile Include="frmAddInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
