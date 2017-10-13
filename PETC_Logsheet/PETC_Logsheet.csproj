@@ -32,27 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,28 +51,7 @@
     <Compile Include="AddInquiryCertificate.Designer.cs">
       <DependentUpon>AddInquiryCertificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddInquiryCetificateClass.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="db_Logsheet.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_Logsheet.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db_Logsheet.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db_Logsheet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_Logsheet.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="ClassTest.cs" />
     <Compile Include="frmAddInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,41 +76,10 @@
     <Compile Include="frmMainMenu.Designer.cs">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="PETC_LogsheetViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PETC_LogsheetViewer.Designer.cs">
-      <DependentUpon>PETC_LogsheetViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TBL_ACTIONS.cs">
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_CEC.cs">
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_LOGSHEET_INQUIRY.cs">
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_LOGSHEET_REMOTE.cs">
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_PETC.cs">
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_SUBORDINATE.cs">
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_USER.cs">
-      <DependentUpon>db_Logsheet.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddInquiryCertificate.resx">
       <DependentUpon>AddInquiryCertificate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddInquiry.resx">
       <DependentUpon>frmAddInquiry.cs</DependentUpon>
@@ -173,24 +103,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="db_Logsheet.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>db_Logsheet.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="db_Logsheet.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>db_Logsheet.edmx</DependentUpon>
-      <LastGenOutput>db_Logsheet.Context.cs</LastGenOutput>
-    </None>
-    <None Include="db_Logsheet.edmx.diagram">
-      <DependentUpon>db_Logsheet.edmx</DependentUpon>
-    </None>
-    <None Include="db_Logsheet.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>db_Logsheet.edmx</DependentUpon>
-      <LastGenOutput>db_Logsheet.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -202,16 +114,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Singapore pa more_1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
