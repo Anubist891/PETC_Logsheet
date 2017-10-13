@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PETC_LogsheetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_ACTIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ACT_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="ACT_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="ACT_DATE" Type="datetime" />
+          <Property Name="ACT_STATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TBL_CEC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PETC_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="PETC_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="PETC_EXPIRY" Type="datetime" />
+          <Property Name="PETC_ASSIGNED" Type="datetime" />
+          <Property Name="PETC_ASSIGNTO" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TBL_LOGSHEET_INQUIRY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOG_DATE" Type="datetime" />
+          <Property Name="LOG_PETCCODE" Type="varchar" MaxLength="10" />
+          <Property Name="LOG_PETCNAME" Type="varchar" MaxLength="200" />
+          <Property Name="LOG_RECEIVEDVIA" Type="varchar" MaxLength="20" />
+          <Property Name="LOG_RECEIVEDBY" Type="varchar" MaxLength="20" />
+          <Property Name="LOG_TMERECEIVE" Type="datetime" />
+          <Property Name="LOG_DTLINQUIRY" Type="varchar" MaxLength="200" />
+          <Property Name="LOG_TMECMPLTED" Type="datetime" />
+          <Property Name="LOG_ACTTAKEN" Type="varchar" MaxLength="255" />
+          <Property Name="LOG_REMARKS" Type="varchar" MaxLength="255" />
+          <Property Name="LOG_RESPONSE" Type="varchar" MaxLength="50" />
+          <Property Name="LOG_ENCODED" Type="datetime" />
+          <Property Name="LOG_DATELOG" Type="datetime" />
+          <Property Name="LOG_REGISTRYCODE" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="TBL_LOGSHEET_REMOTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOG_REGDATE" Type="datetime" />
+          <Property Name="LOG_CONTROL" Type="varchar" MaxLength="10" />
+          <Property Name="LOG_PETCCODE" Type="varchar" MaxLength="10" />
+          <Property Name="LOG_RECEIVEDVIA" Type="varchar" MaxLength="10" />
+          <Property Name="LOG_REVEIDBY" Type="varchar" MaxLength="10" />
+          <Property Name="LOG_PRBRECEIVED" Type="varchar" MaxLength="20" />
+          <Property Name="LOG_TMERECEIVED" Type="datetime" />
+          <Property Name="LOG_RMTBY" Type="varchar" MaxLength="20" />
+          <Property Name="LOG_ACTTAKEN" Type="varchar" MaxLength="255" />
+          <Property Name="LOG_ACTDATE" Type="datetime" />
+          <Property Name="LOG_WRKSTATIONCODE" Type="varchar" MaxLength="30" />
+          <Property Name="LOG_CECNO" Type="varchar" MaxLength="20" />
+          <Property Name="LOG_REMARKS" Type="varchar" MaxLength="255" />
+          <Property Name="LOG_RESPTIME" Type="datetime" />
+          <Property Name="LOG_DATELOG" Type="datetime" />
+          <Property Name="LOG_REGISTRYCODE" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="TBL_PETC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PETC_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="PETC_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="PETC_EXPIRY" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBL_SUBORDINATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUB_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="SUB_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="SUB_EXPIRY" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBL_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="USER_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="USER_EXPIRY" Type="datetime" />
+          <Property Name="USER_STATUS" Type="varchar" MaxLength="1" />
+          <Property Name="USER_DATEREG" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="PETC_LogsheetModelStoreContainer">
+          <EntitySet Name="TBL_ACTIONS" EntityType="Self.TBL_ACTIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_CEC" EntityType="Self.TBL_CEC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_LOGSHEET_INQUIRY" EntityType="Self.TBL_LOGSHEET_INQUIRY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_LOGSHEET_REMOTE" EntityType="Self.TBL_LOGSHEET_REMOTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_PETC" EntityType="Self.TBL_PETC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SUBORDINATE" EntityType="Self.TBL_SUBORDINATE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_USER" EntityType="Self.TBL_USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PETC_LogsheetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_ACTIONS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ACT_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ACT_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ACT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ACT_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_CEC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PETC_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PETC_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PETC_EXPIRY" Type="DateTime" Precision="3" />
+          <Property Name="PETC_ASSIGNED" Type="DateTime" Precision="3" />
+          <Property Name="PETC_ASSIGNTO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_LOGSHEET_REMOTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOG_REGDATE" Type="DateTime" Precision="3" />
+          <Property Name="LOG_CONTROL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_PETCCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_RECEIVEDVIA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_REVEIDBY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_PRBRECEIVED" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_TMERECEIVED" Type="DateTime" Precision="3" />
+          <Property Name="LOG_RMTBY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_ACTTAKEN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_ACTDATE" Type="DateTime" Precision="3" />
+          <Property Name="LOG_WRKSTATIONCODE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_CECNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_REMARKS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_RESPTIME" Type="DateTime" Precision="3" />
+          <Property Name="LOG_DATELOG" Type="DateTime" Precision="3" />
+          <Property Name="LOG_REGISTRYCODE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_PETC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PETC_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PETC_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PETC_EXPIRY" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBL_SUBORDINATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SUB_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_EXPIRY" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBL_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="USER_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="USER_EXPIRY" Type="DateTime" Precision="3" />
+          <Property Name="USER_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="USER_DATEREG" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="PETC_LogsheetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_ACTIONS" EntityType="Self.TBL_ACTIONS" />
+          <EntitySet Name="TBL_CEC" EntityType="Self.TBL_CEC" />
+          <EntitySet Name="TBL_LOGSHEET_REMOTE" EntityType="Self.TBL_LOGSHEET_REMOTE" />
+          <EntitySet Name="TBL_PETC" EntityType="Self.TBL_PETC" />
+          <EntitySet Name="TBL_SUBORDINATE" EntityType="Self.TBL_SUBORDINATE" />
+          <EntitySet Name="TBL_USER" EntityType="Self.TBL_USER" />
+          <EntitySet Name="TBL_LOGSHEET_INQUIRY" EntityType="PETC_LogsheetModel.TBL_LOGSHEET_INQUIRY" />
+        </EntityContainer>
+        <EntityType Name="TBL_LOGSHEET_INQUIRY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOG_DATE" Type="DateTime" Precision="3" />
+          <Property Name="LOG_PETCCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_PETCNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_RECEIVEDVIA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_RECEIVEDBY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_TMERECEIVE" Type="DateTime" Precision="3" />
+          <Property Name="LOG_DTLINQUIRY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_TMECMPLTED" Type="DateTime" Precision="3" />
+          <Property Name="LOG_ACTTAKEN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_REMARKS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_RESPONSE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LOG_ENCODED" Type="DateTime" Precision="3" />
+          <Property Name="LOG_DATELOG" Type="DateTime" Precision="3" />
+          <Property Name="LOG_REGISTRYCODE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PETC_LogsheetModelStoreContainer" CdmEntityContainer="PETC_LogsheetEntities">
+          <EntitySetMapping Name="TBL_ACTIONS">
+            <EntityTypeMapping TypeName="PETC_LogsheetModel.TBL_ACTIONS">
+              <MappingFragment StoreEntitySet="TBL_ACTIONS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ACT_CODE" ColumnName="ACT_CODE" />
+                <ScalarProperty Name="ACT_NAME" ColumnName="ACT_NAME" />
+                <ScalarProperty Name="ACT_DATE" ColumnName="ACT_DATE" />
+                <ScalarProperty Name="ACT_STATUS" ColumnName="ACT_STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_CEC">
+            <EntityTypeMapping TypeName="PETC_LogsheetModel.TBL_CEC">
+              <MappingFragment StoreEntitySet="TBL_CEC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PETC_CODE" ColumnName="PETC_CODE" />
+                <ScalarProperty Name="PETC_NAME" ColumnName="PETC_NAME" />
+                <ScalarProperty Name="PETC_EXPIRY" ColumnName="PETC_EXPIRY" />
+                <ScalarProperty Name="PETC_ASSIGNED" ColumnName="PETC_ASSIGNED" />
+                <ScalarProperty Name="PETC_ASSIGNTO" ColumnName="PETC_ASSIGNTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_LOGSHEET_REMOTE">
+            <EntityTypeMapping TypeName="PETC_LogsheetModel.TBL_LOGSHEET_REMOTE">
+              <MappingFragment StoreEntitySet="TBL_LOGSHEET_REMOTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LOG_REGDATE" ColumnName="LOG_REGDATE" />
+                <ScalarProperty Name="LOG_CONTROL" ColumnName="LOG_CONTROL" />
+                <ScalarProperty Name="LOG_PETCCODE" ColumnName="LOG_PETCCODE" />
+                <ScalarProperty Name="LOG_RECEIVEDVIA" ColumnName="LOG_RECEIVEDVIA" />
+                <ScalarProperty Name="LOG_REVEIDBY" ColumnName="LOG_REVEIDBY" />
+                <ScalarProperty Name="LOG_PRBRECEIVED" ColumnName="LOG_PRBRECEIVED" />
+                <ScalarProperty Name="LOG_TMERECEIVED" ColumnName="LOG_TMERECEIVED" />
+                <ScalarProperty Name="LOG_RMTBY" ColumnName="LOG_RMTBY" />
+                <ScalarProperty Name="LOG_ACTTAKEN" ColumnName="LOG_ACTTAKEN" />
+                <ScalarProperty Name="LOG_ACTDATE" ColumnName="LOG_ACTDATE" />
+                <ScalarProperty Name="LOG_WRKSTATIONCODE" ColumnName="LOG_WRKSTATIONCODE" />
+                <ScalarProperty Name="LOG_CECNO" ColumnName="LOG_CECNO" />
+                <ScalarProperty Name="LOG_REMARKS" ColumnName="LOG_REMARKS" />
+                <ScalarProperty Name="LOG_RESPTIME" ColumnName="LOG_RESPTIME" />
+                <ScalarProperty Name="LOG_DATELOG" ColumnName="LOG_DATELOG" />
+                <ScalarProperty Name="LOG_REGISTRYCODE" ColumnName="LOG_REGISTRYCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_PETC">
+            <EntityTypeMapping TypeName="PETC_LogsheetModel.TBL_PETC">
+              <MappingFragment StoreEntitySet="TBL_PETC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PETC_CODE" ColumnName="PETC_CODE" />
+                <ScalarProperty Name="PETC_NAME" ColumnName="PETC_NAME" />
+                <ScalarProperty Name="PETC_EXPIRY" ColumnName="PETC_EXPIRY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SUBORDINATE">
+            <EntityTypeMapping TypeName="PETC_LogsheetModel.TBL_SUBORDINATE">
+              <MappingFragment StoreEntitySet="TBL_SUBORDINATE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SUB_CODE" ColumnName="SUB_CODE" />
+                <ScalarProperty Name="SUB_NAME" ColumnName="SUB_NAME" />
+                <ScalarProperty Name="SUB_EXPIRY" ColumnName="SUB_EXPIRY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_USER">
+            <EntityTypeMapping TypeName="PETC_LogsheetModel.TBL_USER">
+              <MappingFragment StoreEntitySet="TBL_USER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_EXPIRY" ColumnName="USER_EXPIRY" />
+                <ScalarProperty Name="USER_STATUS" ColumnName="USER_STATUS" />
+                <ScalarProperty Name="USER_DATEREG" ColumnName="USER_DATEREG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_LOGSHEET_INQUIRY">
+            <EntityTypeMapping TypeName="PETC_LogsheetModel.TBL_LOGSHEET_INQUIRY">
+              <MappingFragment StoreEntitySet="TBL_LOGSHEET_INQUIRY">
+                <ScalarProperty Name="LOG_REGISTRYCODE" ColumnName="LOG_REGISTRYCODE" />
+                <ScalarProperty Name="LOG_DATELOG" ColumnName="LOG_DATELOG" />
+                <ScalarProperty Name="LOG_ENCODED" ColumnName="LOG_ENCODED" />
+                <ScalarProperty Name="LOG_RESPONSE" ColumnName="LOG_RESPONSE" />
+                <ScalarProperty Name="LOG_REMARKS" ColumnName="LOG_REMARKS" />
+                <ScalarProperty Name="LOG_ACTTAKEN" ColumnName="LOG_ACTTAKEN" />
+                <ScalarProperty Name="LOG_TMECMPLTED" ColumnName="LOG_TMECMPLTED" />
+                <ScalarProperty Name="LOG_DTLINQUIRY" ColumnName="LOG_DTLINQUIRY" />
+                <ScalarProperty Name="LOG_TMERECEIVE" ColumnName="LOG_TMERECEIVE" />
+                <ScalarProperty Name="LOG_RECEIVEDBY" ColumnName="LOG_RECEIVEDBY" />
+                <ScalarProperty Name="LOG_RECEIVEDVIA" ColumnName="LOG_RECEIVEDVIA" />
+                <ScalarProperty Name="LOG_PETCNAME" ColumnName="LOG_PETCNAME" />
+                <ScalarProperty Name="LOG_PETCCODE" ColumnName="LOG_PETCCODE" />
+                <ScalarProperty Name="LOG_DATE" ColumnName="LOG_DATE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
