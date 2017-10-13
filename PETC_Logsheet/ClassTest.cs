@@ -9,7 +9,7 @@ namespace PETC_Logsheet
     class ClassTest
     {
         public string MyTest { get; set; }
-
+        // ano ito???
         public string GetTest()
         {
             MyTest = "Testing";
