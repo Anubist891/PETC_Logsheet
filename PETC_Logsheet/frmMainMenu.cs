@@ -16,5 +16,28 @@ namespace PETC_Logsheet
         {
             InitializeComponent();
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolAdd_Click(object sender, EventArgs e)
+        {
+            //if (toolStrip1.Select == "")
+            //{
+            //    MessageBox.Show("JRF");
+            //}
+        }
     }
 }

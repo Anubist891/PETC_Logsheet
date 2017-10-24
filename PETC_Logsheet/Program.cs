@@ -42,9 +42,9 @@ namespace PETC_Logsheet
             string localVersion = "";
             try
             {
-                string assemblylocation = Assembly.GetExecutingAssembly().CodeBase;
-                assemblylocation = assemblylocation.Substring(assemblylocation.LastIndexOf("/") + 1);
-                string applicationName = assemblylocation;
+                //string assemblylocation = Assembly.GetExecutingAssembly().CodeBase;
+                //assemblylocation = assemblylocation.Substring(assemblylocation.LastIndexOf("/") + 1);
+                //string applicationName = assemblylocation;
                 AssemblyName assemblyName = Assembly.GetExecutingAssembly().GetName();
                 localVersion = assemblyName.Version.ToString();
             }
